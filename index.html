@@ -30,8 +30,8 @@
     <!-- Main Container -->
     <div class="container py-8">
         <div class="header-bg text-white text-center p-8 rounded-t-3xl">
-            <h1 class="text-3xl font-bold">Jaipur Smart Guide</h1>
-            <p class="mt-2 text-lg">Your personal assistant for a perfect trip.</p>
+            <h1 class="text-3xl font-bold" data-i18n="mainTitle">Jaipur Smart Guide</h1>
+            <p class="mt-2 text-lg" data-i18n="tagline">Your personal assistant for a perfect trip.</p>
         </div>
 
         <!-- Main App Content -->
@@ -40,23 +40,27 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
                 <button onclick="showSection('crowd-checker')" class="flex flex-col items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#8697C4] text-white shadow-lg">
                     <span class="text-3xl">📍</span>
-                    <span class="mt-2 text-sm font-semibold text-center">Crowd Checker</span>
+                    <span class="mt-2 text-sm font-semibold text-center" data-i18n="crowdChecker">Crowd Checker</span>
                 </button>
                 <button onclick="showSection('trip-planner')" class="flex flex-col items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#8697C4] text-white shadow-lg">
                     <span class="text-3xl">🗓️</span>
-                    <span class="mt-2 text-sm font-semibold text-center">Trip Planner</span>
+                    <span class="mt-2 text-sm font-semibold text-center" data-i18n="tripPlanner">Trip Planner</span>
                 </button>
                 <button onclick="showSection('ar-guide')" class="flex flex-col items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#8697C4] text-white shadow-lg">
                     <span class="text-3xl">🔭</span>
-                    <span class="mt-2 text-sm font-semibold text-center">AR Guide</span>
+                    <span class="mt-2 text-sm font-semibold text-center" data-i18n="arGuide">AR Guide</span>
                 </button>
                 <button onclick="showSection('shopping')" class="flex flex-col items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#8697C4] text-white shadow-lg">
                     <span class="text-3xl">🛍️</span>
-                    <span class="mt-2 text-sm font-semibold text-center">Verified Shopping</span>
+                    <span class="mt-2 text-sm font-semibold text-center" data-i18n="shopping">Verified Shopping</span>
+                </button>
+                <button onclick="showSection('language-selector')" class="flex flex-col items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#7091E6] text-white shadow-lg">
+                    <span class="text-3xl">🌐</span>
+                    <span class="mt-2 text-sm font-semibold text-center" data-i18n="language">Language</span>
                 </button>
                 <button onclick="showSection('help')" class="flex flex-col items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-red-500 text-white shadow-lg">
                     <span class="text-3xl">🚑</span>
-                    <span class="mt-2 text-sm font-semibold text-center">Quick Help</span>
+                    <span class="mt-2 text-sm font-semibold text-center" data-i18n="help">Quick Help</span>
                 </button>
             </div>
 
@@ -64,143 +68,160 @@
             <div id="sections-container">
                 <!-- Crowd Checker Section -->
                 <div id="crowd-checker" class="app-section hidden">
-                    <h2 class="text-2xl font-bold mb-4">Crowd Checker</h2>
-                    <p class="text-sm text-gray-600 mb-4">Live crowd data is a simulated prototype feature. Check out the current crowd levels at popular spots to plan your visit!</p>
+                    <h2 class="text-2xl font-bold mb-4" data-i18n="crowdCheckerTitle">Crowd Checker</h2>
+                    <p class="text-sm text-gray-600 mb-4" data-i18n="crowdCheckerSubtitle">Live crowd data is a simulated prototype feature. Check out the current crowd levels at popular spots to plan your visit!</p>
                     <ul id="crowd-list" class="space-y-4">
                         <!-- Crowd data will be dynamically inserted here by JavaScript -->
                     </ul>
-                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300">Back</button>
+                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300" data-i18n="backButton">Back</button>
                 </div>
 
                 <!-- Smart Trip Planner Section -->
                 <div id="trip-planner" class="app-section hidden">
-                    <h2 class="text-2xl font-bold mb-4">Smart Trip Planner</h2>
-                    <p class="text-sm text-gray-600 mb-4">Let our AI create a perfect itinerary for you. Select your interests and duration to get started!</p>
+                    <h2 class="text-2xl font-bold mb-4" data-i18n="tripPlannerTitle">Smart Trip Planner</h2>
+                    <p class="text-sm text-gray-600 mb-4" data-i18n="tripPlannerSubtitle">Let our AI create a perfect itinerary for you. Select your interests and duration to get started!</p>
                     <div class="space-y-4">
                         <label class="block">
-                            <span class="text-gray-700 font-medium">Number of Days:</span>
+                            <span class="text-gray-700 font-medium" data-i18n="daysLabel">Number of Days:</span>
                             <input type="number" id="days" value="3" min="1" max="7" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2">
                         </label>
                         <label class="block">
-                            <span class="text-gray-700 font-medium">Interests:</span>
+                            <span class="text-gray-700 font-medium" data-i18n="interestsLabel">Interests:</span>
                             <div class="mt-1 flex flex-wrap gap-2">
                                 <label class="inline-flex items-center">
                                     <input type="checkbox" class="rounded text-pink-500" name="interest" value="heritage" checked>
-                                    <span class="ml-2 text-sm text-gray-600">Heritage</span>
+                                    <span class="ml-2 text-sm text-gray-600" data-i18n="heritageInterest">Heritage</span>
                                 </label>
                                 <label class="inline-flex items-center">
                                     <input type="checkbox" class="rounded text-pink-500" name="interest" value="shopping">
-                                    <span class="ml-2 text-sm text-gray-600">Shopping</span>
+                                    <span class="ml-2 text-sm text-gray-600" data-i18n="shoppingInterest">Shopping</span>
                                 </label>
                                 <label class="inline-flex items-center">
                                     <input type="checkbox" class="rounded text-pink-500" name="interest" value="food">
-                                    <span class="ml-2 text-sm text-gray-600">Food</span>
+                                    <span class="ml-2 text-sm text-gray-600" data-i18n="foodInterest">Food</span>
                                 </label>
                             </div>
                         </label>
                     </div>
-                    <button onclick="generatePlan()" class="mt-6 w-full py-3 px-4 rounded-lg bg-[#7091E6] text-white font-semibold transition-colors hover:bg-[#8697C4]">Generate Plan</button>
+                    <button onclick="generatePlan()" class="mt-6 w-full py-3 px-4 rounded-lg bg-[#7091E6] text-white font-semibold transition-colors hover:bg-[#8697C4]" data-i18n="generatePlanButton">Generate Plan</button>
                     <div id="itinerary-output" class="mt-6 hidden">
-                        <h3 class="text-xl font-bold mb-2">Your Custom Itinerary</h3>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="itineraryTitle">Your Custom Itinerary</h3>
                         <div class="p-4 card">
                             <p id="itinerary-text" class="text-sm text-gray-700"></p>
                         </div>
                     </div>
-                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300">Back</button>
+                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300" data-i18n="backButton">Back</button>
                 </div>
                 
                 <!-- AI + AR Guide Section -->
                 <div id="ar-guide" class="app-section hidden">
-                    <h2 class="text-2xl font-bold mb-4">AI + AR Guide</h2>
-                    <p class="text-sm text-gray-600 mb-4">This is a prototype for the AR and AI guide. In the full app, you would scan a monument to see AR facts or get an audio guide.</p>
+                    <h2 class="text-2xl font-bold mb-4" data-i18n="arGuideTitle">AI + AR Guide</h2>
+                    <p class="text-sm text-gray-600 mb-4" data-i18n="arGuideSubtitle">This is a prototype for the AR and AI guide. In the full app, you would scan a monument to see AR facts or get an audio guide.</p>
                     <div class="relative w-full h-64 bg-[#ADBBDa] rounded-lg flex items-center justify-center overflow-hidden card">
                         <!-- Placeholder for AR View -->
                         <div class="text-center text-gray-500 font-medium p-4">
                             <span class="text-6xl">🤖</span>
-                            <p class="mt-2 text-sm">Simulated AR Camera View</p>
+                            <p class="mt-2 text-sm" data-i18n="simulatedAR">Simulated AR Camera View</p>
                         </div>
                     </div>
                     <div class="mt-6 p-4 card">
-                        <h3 class="text-xl font-bold">Amer Fort History</h3>
-                        <p class="mt-2 text-gray-700 text-sm">Amer Fort is a fort located in Amer, a town with an area of 4 square kilometres (1.5 sq mi) located 11 kilometres (6.8 mi) from Jaipur, Rajasthan state, India. Located high on a hill, it is the principal tourist attraction in Jaipur.</p>
+                        <h3 class="text-xl font-bold" data-i18n="amerFortTitle">Amer Fort History</h3>
+                        <p class="mt-2 text-gray-700 text-sm" data-i18n="amerFortText">Amer Fort is a fort located in Amer, a town with an area of 4 square kilometres (1.5 sq mi) located 11 kilometres (6.8 mi) from Jaipur, Rajasthan state, India. Located high on a hill, it is the principal tourist attraction in Jaipur.</p>
                     </div>
-                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300">Back</button>
+                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300" data-i18n="backButton">Back</button>
                 </div>
                 
                 <!-- Verified Shopping Section -->
                 <div id="shopping" class="app-section hidden">
-                    <h2 class="text-2xl font-bold mb-4">Verified Shopping</h2>
-                    <p class="text-sm text-gray-600 mb-4">Shop without worry! These are verified stores with fair pricing and digital payment options.</p>
+                    <h2 class="text-2xl font-bold mb-4" data-i18n="shoppingTitle">Verified Shopping</h2>
+                    <p class="text-sm text-gray-600 mb-4" data-i18n="shoppingSubtitle">Shop without worry! These are verified stores with fair pricing and digital payment options.</p>
                     <ul class="space-y-4">
                         <li class="p-4 card flex items-center justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Gopal's Handicrafts</h3>
-                                <p class="text-sm text-gray-500">Handicrafts & Souvenirs</p>
+                                <h3 class="font-semibold text-lg" data-i18n="gopalsTitle">Gopal's Handicrafts</h3>
+                                <p class="text-sm text-gray-500" data-i18n="gopalsSubtitle">Handicrafts & Souvenirs</p>
                             </div>
                             <div class="text-right">
-                                <span class="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-full">Verified</span>
-                                <p class="text-sm text-gray-500">Accepts UPI</p>
+                                <span class="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-full" data-i18n="verifiedTag">Verified</span>
+                                <p class="text-sm text-gray-500" data-i18n="gopalsPayment">Accepts UPI</p>
                             </div>
                         </li>
                         <li class="p-4 card flex items-center justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Pink City Gems</h3>
-                                <p class="text-sm text-gray-500">Jewellery & Gemstones</p>
+                                <h3 class="font-semibold text-lg" data-i18n="pinkCityTitle">Pink City Gems</h3>
+                                <p class="text-sm text-gray-500" data-i18n="pinkCitySubtitle">Jewellery & Gemstones</p>
                             </div>
                             <div class="text-right">
-                                <span class="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-full">Verified</span>
-                                <p class="text-sm text-gray-500">Accepts Cards</p>
+                                <span class="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-full" data-i18n="verifiedTag">Verified</span>
+                                <p class="text-sm text-gray-500" data-i18n="pinkCityPayment">Accepts Cards</p>
                             </div>
                         </li>
                         <li class="p-4 card flex items-center justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Jaipur Textiles Co.</h3>
-                                <p class="text-sm text-gray-500">Traditional Clothing</p>
+                                <h3 class="font-semibold text-lg" data-i18n="jaipurTextilesTitle">Jaipur Textiles Co.</h3>
+                                <p class="text-sm text-gray-500" data-i18n="jaipurTextilesSubtitle">Traditional Clothing</p>
                             </div>
                             <div class="text-right">
-                                <span class="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-full">Verified</span>
-                                <p class="text-sm text-gray-500">Accepts UPI</p>
+                                <span class="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-full" data-i18n="verifiedTag">Verified</span>
+                                <p class="text-sm text-gray-500" data-i18n="jaipurTextilesPayment">Accepts UPI</p>
                             </div>
                         </li>
                     </ul>
-                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300">Back</button>
+                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300" data-i18n="backButton">Back</button>
                 </div>
                 
                 <!-- Quick Help Section -->
                 <div id="help" class="app-section hidden">
-                    <h2 class="text-2xl font-bold mb-4">Quick Help</h2>
-                    <p class="text-sm text-gray-600 mb-4">Find the nearest emergency services with a single tap.</p>
+                    <h2 class="text-2xl font-bold mb-4" data-i18n="helpTitle">Quick Help</h2>
+                    <p class="text-sm text-gray-600 mb-4" data-i18n="helpSubtitle">Find the nearest emergency services with a single tap.</p>
                     <ul class="space-y-4">
                         <li class="p-4 card flex items-center justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Police Station</h3>
-                                <p class="text-sm text-gray-500">C-Scheme Police Station</p>
+                                <h3 class="font-semibold text-lg" data-i18n="policeTitle">Police Station</h3>
+                                <p class="text-sm text-gray-500" data-i18n="policeSubtitle">C-Scheme Police Station</p>
                             </div>
-                            <a href="tel:+911412345678" class="text-white text-sm bg-red-500 py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Call</a>
+                            <a href="tel:+911412345678" class="text-white text-sm bg-red-500 py-2 px-4 rounded-lg hover:bg-red-600 transition-colors" data-i18n="callButton">Call</a>
                         </li>
                         <li class="p-4 card flex items-center justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Hospital</h3>
-                                <p class="text-sm text-gray-500">SMS Hospital</p>
+                                <h3 class="font-semibold text-lg" data-i18n="hospitalTitle">Hospital</h3>
+                                <p class="text-sm text-gray-500" data-i18n="hospitalSubtitle">SMS Hospital</p>
                             </div>
-                            <a href="tel:+911412567890" class="text-white text-sm bg-red-500 py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Call</a>
+                            <a href="tel:+911412567890" class="text-white text-sm bg-red-500 py-2 px-4 rounded-lg hover:bg-red-600 transition-colors" data-i18n="callButton">Call</a>
                         </li>
                         <li class="p-4 card flex items-center justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Tourist Help Desk</h3>
-                                <p class="text-sm text-gray-500">Jaipur Junction</p>
+                                <h3 class="font-semibold text-lg" data-i18n="touristHelpTitle">Tourist Help Desk</h3>
+                                <p class="text-sm text-gray-500" data-i18n="touristHelpSubtitle">Jaipur Junction</p>
                             </div>
-                            <a href="tel:+911412789012" class="text-white text-sm bg-red-500 py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Call</a>
+                            <a href="tel:+911412789012" class="text-white text-sm bg-red-500 py-2 px-4 rounded-lg hover:bg-red-600 transition-colors" data-i18n="callButton">Call</a>
                         </li>
                     </ul>
-                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300">Back</button>
+                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300" data-i18n="backButton">Back</button>
+                </div>
+
+                <!-- Language Selector Section -->
+                <div id="language-selector" class="app-section hidden">
+                    <h2 class="text-2xl font-bold mb-4" data-i18n="languageTitle">Choose Your Language</h2>
+                    <p class="text-sm text-gray-600 mb-4" data-i18n="languageSubtitle">Select your preferred language to customize the app interface.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="setLanguage('en'); showSection('main-menu');" class="flex items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#8697C4] text-white shadow-lg">
+                            <span class="text-xl font-bold">EN</span>
+                            <span class="ml-2">English</span>
+                        </button>
+                        <button onclick="setLanguage('hi'); showSection('main-menu');" class="flex items-center justify-center p-4 rounded-xl card transition-transform transform hover:scale-105 bg-[#8697C4] text-white shadow-lg">
+                            <span class="text-xl font-bold">HI</span>
+                            <span class="ml-2">हिंदी</span>
+                        </button>
+                    </div>
+                    <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300" data-i18n="backButton">Back</button>
                 </div>
                 
                 <!-- Message Box for Alerts (Replaces window.alert) -->
                 <div id="message-box" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
                     <div class="bg-white p-6 rounded-xl card max-w-sm w-full text-center">
                         <p id="message-text" class="text-lg font-semibold text-gray-800 mb-4"></p>
-                        <button onclick="hideMessageBox()" class="w-full py-3 px-4 rounded-lg bg-indigo-500 text-white font-semibold transition-colors hover:bg-indigo-600">OK</button>
+                        <button onclick="hideMessageBox()" class="w-full py-3 px-4 rounded-lg bg-indigo-500 text-white font-semibold transition-colors hover:bg-indigo-600" data-i18n="okButton">OK</button>
                     </div>
                 </div>
 
@@ -209,120 +230,371 @@
     </div>
 
     <script>
+        // Store the current language, default to English
+        let currentLang = 'en';
+
+        // Translations object
+        const translations = {
+            'en': {
+                mainTitle: 'Jaipur Smart Guide',
+                tagline: 'Your personal assistant for a perfect trip.',
+                crowdChecker: 'Crowd Checker',
+                tripPlanner: 'Trip Planner',
+                arGuide: 'AR Guide',
+                shopping: 'Verified Shopping',
+                language: 'Language',
+                help: 'Quick Help',
+                crowdCheckerTitle: 'Crowd Checker',
+                crowdCheckerSubtitle: 'Live crowd data is a simulated prototype feature. Check out the current crowd levels at popular spots to plan your visit!',
+                backButton: 'Back',
+                tripPlannerTitle: 'Smart Trip Planner',
+                tripPlannerSubtitle: 'Let our AI create a perfect itinerary for you. Select your interests and duration to get started!',
+                daysLabel: 'Number of Days:',
+                interestsLabel: 'Interests:',
+                heritageInterest: 'Heritage',
+                shoppingInterest: 'Shopping',
+                foodInterest: 'Food',
+                generatePlanButton: 'Generate Plan',
+                itineraryTitle: 'Your Custom Itinerary',
+                arGuideTitle: 'AI + AR Guide',
+                arGuideSubtitle: 'This is a prototype for the AR and AI guide. In the full app, you would scan a monument to see AR facts or get an audio guide.',
+                simulatedAR: 'Simulated AR Camera View',
+                amerFortTitle: 'Amer Fort History',
+                amerFortText: 'Amer Fort is a fort located in Amer, a town with an area of 4 square kilometres (1.5 sq mi) located 11 kilometres (6.8 mi) from Jaipur, Rajasthan state, India. Located high on a hill, it is the principal tourist attraction in Jaipur.',
+                shoppingTitle: 'Verified Shopping',
+                shoppingSubtitle: 'Shop without worry! These are verified stores with fair pricing and digital payment options.',
+                gopalsTitle: 'Gopal\'s Handicrafts',
+                gopalsSubtitle: 'Handicrafts & Souvenirs',
+                gopalsPayment: 'Accepts UPI',
+                pinkCityTitle: 'Pink City Gems',
+                pinkCitySubtitle: 'Jewellery & Gemstones',
+                pinkCityPayment: 'Accepts Cards',
+                jaipurTextilesTitle: 'Jaipur Textiles Co.',
+                jaipurTextilesSubtitle: 'Traditional Clothing',
+                jaipurTextilesPayment: 'Accepts UPI',
+                helpTitle: 'Quick Help',
+                helpSubtitle: 'Find the nearest emergency services with a single tap.',
+                policeTitle: 'Police Station',
+                policeSubtitle: 'C-Scheme Police Station',
+                hospitalTitle: 'Hospital',
+                hospitalSubtitle: 'SMS Hospital',
+                touristHelpTitle: 'Tourist Help Desk',
+                touristHelpSubtitle: 'Jaipur Junction',
+                callButton: 'Call',
+                languageTitle: 'Choose Your Language',
+                languageSubtitle: 'Select your preferred language to customize the app interface.',
+                okButton: 'OK',
+                planGeneratedMessage: 'Your custom itinerary has been generated!',
+                low: 'Low',
+                medium: 'Medium',
+                high: 'High',
+                verifiedTag: 'Verified',
+                hawaMahal: 'The Palace of Winds',
+                amerFort: 'Historic Fort and Palace',
+                cityPalace: 'Royal Residence',
+                jantarMantar: 'Astronomical Observatory',
+                albertHall: 'State Museum of Rajasthan',
+                birlaMandir: 'Hindu Temple of Jaipur',
+                days: 'Day',
+            },
+            'hi': {
+                mainTitle: 'जयपुर स्मार्ट गाइड',
+                tagline: 'आपकी यात्रा को यादगार बनाने के लिए आपका निजी सहायक।',
+                crowdChecker: 'भीड़ जाँचकर्ता',
+                tripPlanner: 'यात्रा योजनाकार',
+                arGuide: 'एआर गाइड',
+                shopping: 'सत्यापित दुकानें',
+                language: 'भाषा',
+                help: 'त्वरित सहायता',
+                crowdCheckerTitle: 'भीड़ जाँचकर्ता',
+                crowdCheckerSubtitle: 'यह लाइव भीड़ का डेटा एक प्रोटोटाइप सुविधा है। अपनी यात्रा की योजना बनाने के लिए लोकप्रिय स्थानों पर वर्तमान भीड़ के स्तर की जाँच करें!',
+                backButton: 'वापस',
+                tripPlannerTitle: 'स्मार्ट यात्रा योजनाकार',
+                tripPlannerSubtitle: 'हमारे AI को आपके लिए एक सही यात्रा कार्यक्रम बनाने दें। शुरू करने के लिए अपनी रुचियां और अवधि चुनें!',
+                daysLabel: 'दिनों की संख्या:',
+                interestsLabel: 'रुचियां:',
+                heritageInterest: 'विरासत',
+                shoppingInterest: 'खरीदारी',
+                foodInterest: 'भोजन',
+                generatePlanButton: 'योजना बनाएं',
+                itineraryTitle: 'आपका कस्टम यात्रा कार्यक्रम',
+                arGuideTitle: 'एआई + एआर गाइड',
+                arGuideSubtitle: 'यह एआर और एआई गाइड के लिए एक प्रोटोटाइप है। पूर्ण ऐप में, आप एआर तथ्यों को देखने या एक ऑडियो गाइड प्राप्त करने के लिए एक स्मारक को स्कैन करेंगे।',
+                simulatedAR: 'सिम्युलेटेड एआर कैमरा व्यू',
+                amerFortTitle: 'आमेर किला इतिहास',
+                amerFortText: 'आमेर किला आमेर में स्थित एक किला है, जो भारत के राजस्थान राज्य के जयपुर से 11 किलोमीटर (6.8 मील) दूर 4 वर्ग किलोमीटर (1.5 वर्ग मील) के क्षेत्र में स्थित है। एक पहाड़ी पर ऊँचा स्थित, यह जयपुर में प्रमुख पर्यटक आकर्षण है।',
+                shoppingTitle: 'सत्यापित खरीदारी',
+                shoppingSubtitle: 'बिना चिंता के खरीदारी करें! ये निष्पक्ष मूल्य निर्धारण और डिजिटल भुगतान विकल्पों के साथ सत्यापित स्टोर हैं।',
+                gopalsTitle: 'गोपाल हस्तशिल्प',
+                gopalsSubtitle: 'हस्तशिल्प और स्मृति चिन्ह',
+                gopalsPayment: 'UPI स्वीकार करता है',
+                pinkCityTitle: 'पिंक सिटी जेम्स',
+                pinkCitySubtitle: 'आभूषण और रत्न',
+                pinkCityPayment: 'कार्ड स्वीकार करता है',
+                jaipurTextilesTitle: 'जयपुर टेक्सटाइल्स कंपनी',
+                jaipurTextilesSubtitle: 'पारंपरिक कपड़े',
+                jaipurTextilesPayment: 'UPI स्वीकार करता है',
+                helpTitle: 'त्वरित सहायता',
+                helpSubtitle: 'एक ही टैप में निकटतम आपातकालीन सेवाओं का पता लगाएं।',
+                policeTitle: 'पुलिस स्टेशन',
+                policeSubtitle: 'सी-स्कीम पुलिस स्टेशन',
+                hospitalTitle: 'अस्पताल',
+                hospitalSubtitle: 'एसएमएस अस्पताल',
+                touristHelpTitle: 'पर्यटक सहायता डेस्क',
+                touristHelpSubtitle: 'जयपुर जंक्शन',
+                callButton: 'कॉल करें',
+                languageTitle: 'अपनी भाषा चुनें',
+                languageSubtitle: 'एप्लिकेशन इंटरफ़ेस को अनुकूलित करने के लिए अपनी पसंदीदा भाषा चुनें।',
+                okButton: 'ठीक है',
+                planGeneratedMessage: 'आपकी कस्टम यात्रा योजना बनाई गई है!',
+                low: 'कम',
+                medium: 'मध्यम',
+                high: 'उच्च',
+                verifiedTag: 'सत्यापित',
+                hawaMahal: 'हवाओं का महल',
+                amerFort: 'ऐतिहासिक किला और महल',
+                cityPalace: 'शाही निवास',
+                jantarMantar: 'खगोलीय वेधशाला',
+                albertHall: 'राजस्थान राज्य संग्रहालय',
+                birlaMandir: 'जयपुर का हिंदू मंदिर',
+                days: 'दिन',
+            }
+        };
+
         // Data for the trip planner
         const tripPlans = {
-            '3-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+            'en': {
+                '3-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
 Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
 Day 3: Albert Hall Museum, Birla Mandir, and a local Rajasthani thali for lunch.`,
-            '3-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+                '3-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
 Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
 Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop for some authentic shopping.`,
-            '3-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+                '3-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
 Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
 Day 3: Authentic Dal Baati Churma lunch. End your trip with a rooftop dinner overlooking the city.`,
-            '3-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+                '3-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
 Day 2: Amer Fort and Jaigarh Fort.
 Day 3: A day for shopping and exploring local food markets.`,
-            '4-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+                '4-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
 Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
 Day 3: Albert Hall Museum and Birla Mandir.
 Day 4: Day trip to Samode Palace, a magnificent heritage property.`,
-            '4-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+                '4-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
 Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
 Day 3: Local markets for souvenirs and handicrafts.
 Day 4: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.`,
-            '4-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+                '4-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
 Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
 Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
 Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.`,
-            '4-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+                '4-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
 Day 2: Amer Fort and Jaigarh Fort.
 Day 3: A day for shopping and local food.
 Day 4: Visit Albert Hall Museum and Birla Mandir.`,
-            '5-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+                '5-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
 Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
 Day 3: Explore the Albert Hall Museum and Birla Mandir.
 Day 4: Day trip to Samode Palace, a magnificent heritage property.
 Day 5: Visit the historic Galta Ji (Monkey Temple) and enjoy the scenic views from the Sun Temple.`,
-            '5-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+                '5-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
 Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
 Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop.
 Day 4: Explore the art galleries and artisan shops in the Civil Lines area.
 Day 5: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.`,
-            '5-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+                '5-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
 Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
 Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
 Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.
 Day 5: Go on a food safari to different parts of the city, trying local delicacies like rabri, kulfi, and ghevar.`,
-            '5-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+                '5-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
 Day 2: Amer Fort and Jaigarh Fort.
 Day 3: A day for shopping and exploring local food markets.
 Day 4: Visit Albert Hall Museum and Birla Mandir.
 Day 5: Explore the beautiful Sisodia Rani Garden and Vidhyadhar Garden.`,
-            '6-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+                '6-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
 Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
 Day 3: Explore the Albert Hall Museum and Birla Mandir.
 Day 4: Day trip to Samode Palace, a magnificent heritage property.
 Day 5: Visit the historic Galta Ji (Monkey Temple) and enjoy the scenic views from the Sun Temple.
 Day 6: Discover the intricate carvings at Patrika Gate and stroll through Jawahar Circle Garden.`,
-            '6-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+                '6-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
 Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
 Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop.
 Day 4: Explore the art galleries and artisan shops in the Civil Lines area.
 Day 5: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.
 Day 6: A day trip to a rural village to see local craft production.`,
-            '6-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+                '6-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
 Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
 Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
 Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.
 Day 5: Go on a food safari to different parts of the city, trying local delicacies like rabri, kulfi, and ghevar.
 Day 6: Take a cooking class to learn how to prepare authentic Rajasthani dishes.`,
-            '6-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+                '6-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
 Day 2: Amer Fort and Jaigarh Fort.
 Day 3: A day for shopping and exploring local food markets.
 Day 4: Visit Albert Hall Museum and Birla Mandir.
 Day 5: Explore the beautiful Sisodia Rani Garden and Vidhyadhar Garden.
 Day 6: Discover the peaceful surroundings of Jal Mahal and the unique stepwell of Panna Meena ka Kund.`,
-            '7-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+                '7-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
 Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
 Day 3: Explore the Albert Hall Museum and Birla Mandir.
 Day 4: Day trip to Samode Palace, a magnificent heritage property.
 Day 5: Visit the historic Galta Ji (Monkey Temple) and enjoy the scenic views from the Sun Temple.
 Day 6: Discover the intricate carvings at Patrika Gate and stroll through Jawahar Circle Garden.
 Day 7: A day dedicated to local culture with a visit to a traditional village and a final Rajasthani thali.`,
-            '7-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+                '7-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
 Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
 Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop.
 Day 4: Explore the art galleries and artisan shops in the Civil Lines area.
 Day 5: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.
 Day 6: A day trip to a rural village to see local craft production.
 Day 7: Head to Tripolia Bazaar for bangles and carpets, followed by a final shopping spree.`,
-            '7-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+                '7-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
 Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
 Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
 Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.
 Day 5: Go on a food safari to different parts of the city, trying local delicacies like rabri, kulfi, and ghevar.
 Day 6: Take a cooking class to learn how to prepare authentic Rajasthani dishes.
 Day 7: A final grand meal at a top-rated fine-dining restaurant specializing in local cuisine.`,
-            '7-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+                '7-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
 Day 2: Amer Fort and Jaigarh Fort.
 Day 3: A day for shopping and exploring local food markets.
 Day 4: Visit Albert Hall Museum and Birla Mandir.
 Day 5: Explore the beautiful Sisodia Rani Garden and Vidhyadhar Garden.
 Day 6: Discover the peaceful surroundings of Jal Mahal and the unique stepwell of Panna Meena ka Kund.
 Day 7: Last-minute souvenir shopping and a final taste of authentic Rajasthani cuisine.`
+            },
+            'hi': {
+                '3-heritage': `दिन 1: आमेर किला, जयगढ़ किला, और नाहरगढ़ किला। पन्ना मीना का कुंड का दौरा करके समाप्त करें।
+दिन 2: सिटी पैलेस, जंतर मंतर, और हवा महल। पुराने शहर में टहलने का आनंद लें।
+दिन 3: अल्बर्ट हॉल म्यूजियम, बिरला मंदिर, और दोपहर के भोजन के लिए एक स्थानीय राजस्थानी थाली।`,
+                '3-shopping': `दिन 1: जौहरी बाजार आभूषणों और रत्नों के लिए। वस्त्र और मोजरी के लिए बापू बाजार का अन्वेषण करें।
+दिन 2: ब्लॉक प्रिंटिंग और मिट्टी के बर्तनों के लिए सांगानेर की यात्रा। आधुनिक खरीदारी के लिए गौरव टॉवर क्षेत्र का दौरा करें।
+दिन 3: स्मृति चिन्ह और हस्तशिल्प के लिए स्थानीय बाजार। कुछ प्रामाणिक खरीदारी के लिए एक सत्यापित दुकान का दौरा करके समाप्त करें।`,
+                '3-food': `दिन 1: स्थानीय जोड़ों पर प्रसिद्ध प्याज कचौरी और लस्सी का स्वाद लें। एक पारंपरिक राजस्थानी रेस्तरां में रात का खाना।
+दिन 2: मसाला चौक का स्ट्रीट फूड टूर। विभिन्न प्रकार की मिठाइयों और चाट का प्रयास करें।
+दिन 3: प्रामाणिक दाल बाटी चूरमा दोपहर का भोजन। शहर को देखने वाले एक छत पर रात के खाने के साथ अपनी यात्रा समाप्त करें।`,
+                '3-default': `दिन 1: हवा महल, जंतर मंतर, और सिटी पैलेस।
+दिन 2: आमेर किला और जयगढ़ किला।
+दिन 3: खरीदारी और स्थानीय खाद्य बाजारों का पता लगाने के लिए एक दिन।`,
+                '4-heritage': `दिन 1: आमेर किला, जयगढ़ किला, और नाहरगढ़ किला। पन्ना मीना का कुंड का दौरा करके समाप्त करें।
+दिन 2: सिटी पैलेस, जंतर मंतर, और हवा महल। पुराने शहर में टहलने का आनंद लें।
+दिन 3: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर।
+दिन 4: सामोद पैलेस के लिए दिन की यात्रा, एक शानदार विरासत संपत्ति।`,
+                '4-shopping': `दिन 1: जौहरी बाजार आभूषणों और रत्नों के लिए। वस्त्र और मोजरी के लिए बापू बाजार का अन्वेषण करें।
+दिन 2: ब्लॉक प्रिंटिंग और मिट्टी के बर्तनों के लिए सांगानेर की यात्रा। आधुनिक खरीदारी के लिए गौरव टॉवर क्षेत्र का दौरा करें।
+दिन 3: स्मृति चिन्ह और हस्तशिल्प के लिए स्थानीय बाजार।
+दिन 4: लकड़ी की नक्काशी और टाई-डाई वस्त्रों के लिए जाने जाने वाले किशनपोल बाजार का दौरा करें।`,
+                '4-food': `दिन 1: स्थानीय जोड़ों पर प्रसिद्ध प्याज कचौरी और लस्सी का स्वाद लें। एक पारंपरिक राजस्थानी रेस्तरां में रात का खाना।
+दिन 2: मसाला चौक का स्ट्रीट फूड टूर। विभिन्न प्रकार की मिठाइयों और चाट का प्रयास करें।
+दिन 3: प्रामाणिक दाल बाटी चूरमा दोपहर का भोजन। शहर को देखने वाले एक छत पर रात के खाने के साथ अपना दिन समाप्त करें।
+दिन 4: आमेर किले के आसपास के भोजन के दृश्य का अन्वेषण करें, जिसमें पारंपरिक राजस्थानी स्नैक्स और मिठाइयाँ शामिल हैं।`,
+                '4-default': `दिन 1: हवा महल, जंतर मंतर, और सिटी पैलेस।
+दिन 2: आमेर किला और जयगढ़ किला।
+दिन 3: खरीदारी और स्थानीय भोजन के लिए एक दिन।
+दिन 4: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का दौरा करें।`,
+                '5-heritage': `दिन 1: आमेर किला, जयगढ़ किला, और नाहरगढ़ किला। पन्ना मीना का कुंड का दौरा करके समाप्त करें।
+दिन 2: सिटी पैलेस, जंतर मंतर, और हवा महल। पुराने शहर में टहलने का आनंद लें।
+दिन 3: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का अन्वेषण करें।
+दिन 4: सामोद पैलेस के लिए दिन की यात्रा, एक शानदार विरासत संपत्ति।
+दिन 5: ऐतिहासिक गलता जी (बंदर मंदिर) का दौरा करें और सूर्य मंदिर से सुंदर दृश्यों का आनंद लें।`,
+                '5-shopping': `दिन 1: जौहरी बाजार आभूषणों और रत्नों के लिए। वस्त्र और मोजरी के लिए बापू बाजार का अन्वेषण करें।
+दिन 2: ब्लॉक प्रिंटिंग और मिट्टी के बर्तनों के लिए सांगानेर की यात्रा। आधुनिक खरीदारी के लिए गौरव टॉवर क्षेत्र का दौरा करें।
+दिन 3: स्मृति चिन्ह और हस्तशिल्प के लिए स्थानीय बाजार। एक सत्यापित दुकान का दौरा करके समाप्त करें।
+दिन 4: सिविल लाइंस क्षेत्र में कला दीर्घाओं और कारीगरों की दुकानों का अन्वेषण करें।
+दिन 5: लकड़ी की नक्काशी और टाई-डाई वस्त्रों के लिए जाने जाने वाले किशनपोल बाजार का दौरा करें।`,
+                '5-food': `दिन 1: स्थानीय जोड़ों पर प्रसिद्ध प्याज कचौरी और लस्सी का स्वाद लें। एक पारंपरिक राजस्थानी रेस्तरां में रात का खाना।
+दिन 2: मसाला चौक का स्ट्रीट फूड टूर। विभिन्न प्रकार की मिठाइयों और चाट का प्रयास करें।
+दिन 3: प्रामाणिक दाल बाटी चूरमा दोपहर का भोजन। शहर को देखने वाले एक छत पर रात के खाने के साथ अपना दिन समाप्त करें।
+दिन 4: आमेर किले के आसपास के भोजन के दृश्य का अन्वेषण करें, जिसमें पारंपरिक राजस्थानी स्नैक्स और मिठाइयाँ शामिल हैं।
+दिन 5: शहर के विभिन्न हिस्सों में एक खाद्य सफारी पर जाएं, रबड़ी, कुल्फी, और घेवर जैसी स्थानीय व्यंजनों का प्रयास करें।`,
+                '5-default': `दिन 1: हवा महल, जंतर मंतर, और सिटी पैलेस।
+दिन 2: आमेर किला और जयगढ़ किला।
+दिन 3: खरीदारी और स्थानीय खाद्य बाजारों का पता लगाने के लिए एक दिन।
+दिन 4: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का दौरा करें।
+दिन 5: सुंदर सिसोदिया रानी उद्यान और विद्याधर उद्यान का अन्वेषण करें।`,
+                '6-heritage': `दिन 1: आमेर किला, जयगढ़ किला, और नाहरगढ़ किला। पन्ना मीना का कुंड का दौरा करके समाप्त करें।
+दिन 2: सिटी पैलेस, जंतर मंतर, और हवा महल। पुराने शहर में टहलने का आनंद लें।
+दिन 3: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का अन्वेषण करें।
+दिन 4: सामोद पैलेस के लिए दिन की यात्रा, एक शानदार विरासत संपत्ति।
+दिन 5: ऐतिहासिक गलता जी (बंदर मंदिर) का दौरा करें और सूर्य मंदिर से सुंदर दृश्यों का आनंद लें।
+दिन 6: पत्रिका गेट पर जटिल नक्काशी की खोज करें और जवाहर सर्कल गार्डन में टहलें।`,
+                '6-shopping': `दिन 1: जौहरी बाजार आभूषणों और रत्नों के लिए। वस्त्र और मोजरी के लिए बापू बाजार का अन्वेषण करें।
+दिन 2: ब्लॉक प्रिंटिंग और मिट्टी के बर्तनों के लिए सांगानेर की यात्रा। आधुनिक खरीदारी के लिए गौरव टॉवर क्षेत्र का दौरा करें।
+दिन 3: स्मृति चिन्ह और हस्तशिल्प के लिए स्थानीय बाजार। एक सत्यापित दुकान का दौरा करके समाप्त करें।
+दिन 4: सिविल लाइंस क्षेत्र में कला दीर्घाओं और कारीगरों की दुकानों का अन्वेषण करें।
+दिन 5: लकड़ी की नक्काशी और टाई-डाई वस्त्रों के लिए जाने जाने वाले किशनपोल बाजार का दौरा करें।
+दिन 6: स्थानीय शिल्प उत्पादन देखने के लिए एक ग्रामीण गांव की दिन की यात्रा।`,
+                '6-food': `दिन 1: स्थानीय जोड़ों पर प्रसिद्ध प्याज कचौरी और लस्सी का स्वाद लें। एक पारंपरिक राजस्थानी रेस्तरां में रात का खाना।
+दिन 2: मसाला चौक का स्ट्रीट फूड टूर। विभिन्न प्रकार की मिठाइयों और चाट का प्रयास करें।
+दिन 3: प्रामाणिक दाल बाटी चूरमा दोपहर का भोजन। शहर को देखने वाले एक छत पर रात के खाने के साथ अपना दिन समाप्त करें।
+दिन 4: आमेर किले के आसपास के भोजन के दृश्य का अन्वेषण करें, जिसमें पारंपरिक राजस्थानी स्नैक्स और मिठाइयाँ शामिल हैं।
+दिन 5: शहर के विभिन्न हिस्सों में एक खाद्य सफारी पर जाएं, रबड़ी, कुल्फी, और घेवर जैसी स्थानीय व्यंजनों का प्रयास करें।
+दिन 6: प्रामाणिक राजस्थानी व्यंजन तैयार करना सीखने के लिए एक खाना पकाने की कक्षा लें।`,
+                '6-default': `दिन 1: हवा महल, जंतर मंतर, और सिटी पैलेस।
+दिन 2: आमेर किला और जयगढ़ किला।
+दिन 3: खरीदारी और स्थानीय खाद्य बाजारों का पता लगाने के लिए एक दिन।
+दिन 4: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का दौरा करें।
+दिन 5: सुंदर सिसोदिया रानी उद्यान और विद्याधर उद्यान का अन्वेषण करें।
+दिन 6: जल महल के शांत वातावरण और पन्ना मीना का कुंड के अद्वितीय बावड़ी की खोज करें।`,
+                '7-heritage': `दिन 1: आमेर किला, जयगढ़ किला, और नाहरगढ़ किला। पन्ना मीना का कुंड का दौरा करके समाप्त करें।
+दिन 2: सिटी पैलेस, जंतर मंतर, और हवा महल। पुराने शहर में टहलने का आनंद लें।
+दिन 3: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का अन्वेषण करें।
+दिन 4: सामोद पैलेस के लिए दिन की यात्रा, एक शानदार विरासत संपत्ति।
+दिन 5: ऐतिहासिक गलता जी (बंदर मंदिर) का दौरा करें और सूर्य मंदिर से सुंदर दृश्यों का आनंद लें।
+दिन 6: पत्रिका गेट पर जटिल नक्काशी की खोज करें और जवाहर सर्कल गार्डन में टहलें।
+दिन 7: स्थानीय संस्कृति को समर्पित एक दिन, एक पारंपरिक गांव की यात्रा और एक अंतिम राजस्थानी थाली के साथ।`,
+                '7-shopping': `दिन 1: जौहरी बाजार आभूषणों और रत्नों के लिए। वस्त्र और मोजरी के लिए बापू बाजार का अन्वेषण करें।
+दिन 2: ब्लॉक प्रिंटिंग और मिट्टी के बर्तनों के लिए सांगानेर की यात्रा। आधुनिक खरीदारी के लिए गौरव टॉवर क्षेत्र का दौरा करें।
+दिन 3: स्मृति चिन्ह और हस्तशिल्प के लिए स्थानीय बाजार। एक सत्यापित दुकान का दौरा करके समाप्त करें।
+दिन 4: सिविल लाइंस क्षेत्र में कला दीर्घाओं और कारीगरों की दुकानों का अन्वेषण करें।
+दिन 5: लकड़ी की नक्काशी और टाई-डाई वस्त्रों के लिए जाने जाने वाले किशनपोल बाजार का दौरा करें।
+दिन 6: स्थानीय शिल्प उत्पादन देखने के लिए एक ग्रामीण गांव की दिन की यात्रा।
+दिन 7: चूड़ियों और कालीनों के लिए त्रिपोलिया बाजार की ओर जाएं, जिसके बाद एक अंतिम खरीदारी करें।`,
+                '7-food': `दिन 1: स्थानीय जोड़ों पर प्रसिद्ध प्याज कचौरी और लस्सी का स्वाद लें। एक पारंपरिक राजस्थानी रेस्तरां में रात का खाना।
+दिन 2: मसाला चौक का स्ट्रीट फूड टूर। विभिन्न प्रकार की मिठाइयों और चाट का प्रयास करें।
+दिन 3: प्रामाणिक दाल बाटी चूरमा दोपहर का भोजन। शहर को देखने वाले एक छत पर रात के खाने के साथ अपना दिन समाप्त करें।
+दिन 4: आमेर किले के आसपास के भोजन के दृश्य का अन्वेषण करें, जिसमें पारंपरिक राजस्थानी स्नैक्स और मिठाइयाँ शामिल हैं।
+दिन 5: शहर के विभिन्न हिस्सों में एक खाद्य सफारी पर जाएं, रबड़ी, कुल्फी, और घेवर जैसी स्थानीय व्यंजनों का प्रयास करें।
+दिन 6: प्रामाणिक राजस्थानी व्यंजन तैयार करना सीखने के लिए एक खाना पकाने की कक्षा लें।
+दिन 7: स्थानीय व्यंजनों में विशेषज्ञता वाले एक शीर्ष-रेटेड बढ़िया भोजन रेस्तरां में एक अंतिम भव्य भोजन।`,
+                '7-default': `दिन 1: हवा महल, जंतर मंतर, और सिटी पैलेस।
+दिन 2: आमेर किला और जयगढ़ किला।
+दिन 3: खरीदारी और स्थानीय खाद्य बाजारों का पता लगाने के लिए एक दिन।
+दिन 4: अल्बर्ट हॉल म्यूजियम और बिरला मंदिर का दौरा करें।
+दिन 5: सुंदर सिसोदिया रानी उद्यान और विद्याधर उद्यान का अन्वेषण करें।
+दिन 6: जल महल के शांत वातावरण और पन्ना मीना का कुंड के अद्वितीय बावड़ी की खोज करें।
+दिन 7: अंतिम क्षण की स्मृति चिन्ह खरीदारी और प्रामाणिक राजस्थानी व्यंजनों का अंतिम स्वाद।`
+            }
         };
 
         const crowdPlaces = [
-            { name: 'Hawa Mahal', subtitle: 'The Palace of Winds' },
-            { name: 'Amer Fort', subtitle: 'Historic Fort and Palace' },
-            { name: 'City Palace', subtitle: 'Royal Residence' },
-            { name: 'Jantar Mantar', subtitle: 'Astronomical Observatory' },
-            { name: 'Albert Hall Museum', subtitle: 'State Museum of Rajasthan' },
-            { name: 'Birla Mandir', subtitle: 'Hindu Temple of Jaipur' }
+            { name: 'Hawa Mahal', en: 'The Palace of Winds', hi: 'हवाओं का महल' },
+            { name: 'Amer Fort', en: 'Historic Fort and Palace', hi: 'ऐतिहासिक किला और महल' },
+            { name: 'City Palace', en: 'Royal Residence', hi: 'शाही निवास' },
+            { name: 'Jantar Mantar', en: 'Astronomical Observatory', hi: 'खगोलीय वेधशाला' },
+            { name: 'Albert Hall Museum', en: 'State Museum of Rajasthan', hi: 'राजस्थान राज्य संग्रहालय' },
+            { name: 'Birla Mandir', en: 'Hindu Temple of Jaipur', hi: 'जयपुर का हिंदू मंदिर' }
         ];
 
-        function showMessageBox(message) {
+        // Function to update the UI text based on the selected language
+        function updateUI() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.innerText = translations[currentLang][key];
+                }
+            });
+            updateCrowdData();
+            // Re-generate plan if the itinerary output is visible
+            if (!document.getElementById('itinerary-output').classList.contains('hidden')) {
+                generatePlan();
+            }
+        }
+
+        function showMessageBox(messageKey) {
+            const message = translations[currentLang][messageKey] || messageKey;
             document.getElementById('message-text').innerText = message;
             document.getElementById('message-box').classList.remove('hidden');
         }
@@ -343,6 +615,12 @@ Day 7: Last-minute souvenir shopping and a final taste of authentic Rajasthani c
                 document.getElementById(sectionId).classList.remove('hidden');
             }
         }
+        
+        // This function will set the language and update the UI
+        function setLanguage(lang) {
+            currentLang = lang;
+            updateUI();
+        }
 
         function generatePlan() {
             const days = document.getElementById('days').value;
@@ -356,45 +634,57 @@ Day 7: Last-minute souvenir shopping and a final taste of authentic Rajasthani c
                 planKey += interests[0];
             }
 
-            const planText = tripPlans[planKey] || tripPlans[`${days}-default`] || tripPlans['3-default'];
-            document.getElementById('itinerary-text').innerText = planText;
+            const planText = tripPlans[currentLang][planKey] || tripPlans[currentLang][`${days}-default`] || tripPlans[currentLang]['3-default'];
+            const planLines = planText.split('\n');
+            let formattedPlan = '';
+            planLines.forEach(line => {
+                // Find "Day" or "दिन" and make it bold
+                if (line.startsWith(translations[currentLang]['days'])) {
+                    formattedPlan += `<strong class="text-indigo-600">${line}</strong><br>`;
+                } else {
+                    formattedPlan += `${line}<br>`;
+                }
+            });
+            document.getElementById('itinerary-text').innerHTML = formattedPlan;
             document.getElementById('itinerary-output').classList.remove('hidden');
 
-            showMessageBox("Your custom itinerary has been generated!");
+            showMessageBox('planGeneratedMessage');
         }
 
         function updateCrowdData() {
             const crowdList = document.getElementById('crowd-list');
             crowdList.innerHTML = '';
             
-            const crowdStatuses = ['Low', 'Medium', 'High'];
+            const crowdStatuses = ['low', 'medium', 'high'];
             const crowdColors = {
-                'Low': { bg: 'bg-green-200', text: 'text-green-700' },
-                'Medium': { bg: 'bg-yellow-200', text: 'text-yellow-700' },
-                'High': { bg: 'bg-red-200', text: 'text-red-700' }
+                'low': { bg: 'bg-green-200', text: 'text-green-700' },
+                'medium': { bg: 'bg-yellow-200', text: 'text-yellow-700' },
+                'high': { bg: 'bg-red-200', text: 'text-red-700' }
             };
 
             crowdPlaces.forEach(place => {
-                const randomStatus = crowdStatuses[Math.floor(Math.random() * crowdStatuses.length)];
-                const colors = crowdColors[randomStatus];
+                const randomStatusKey = crowdStatuses[Math.floor(Math.random() * crowdStatuses.length)];
+                const colors = crowdColors[randomStatusKey];
+                const translatedStatus = translations[currentLang][randomStatusKey];
+                const translatedSubtitle = place[currentLang];
 
                 const li = document.createElement('li');
                 li.className = 'p-4 card flex items-center justify-between';
                 li.innerHTML = `
                     <div>
                         <h3 class="font-semibold text-lg">${place.name}</h3>
-                        <p class="text-sm text-gray-500">${place.subtitle}</p>
+                        <p class="text-sm text-gray-500">${translatedSubtitle}</p>
                     </div>
-                    <span class="text-sm font-bold p-2 rounded-full ${colors.bg} ${colors.text}">${randomStatus}</span>
+                    <span class="text-sm font-bold p-2 rounded-full ${colors.bg} ${colors.text}">${translatedStatus}</span>
                 `;
                 crowdList.appendChild(li);
             });
         }
         
-        // Initially show the main menu and update the crowd data
+        // Initially show the main menu and update the UI
         window.onload = function() {
             showSection('main-menu');
-            updateCrowdData();
+            updateUI();
         }
     </script>
 
