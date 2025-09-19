@@ -66,35 +66,8 @@
                 <div id="crowd-checker" class="app-section hidden">
                     <h2 class="text-2xl font-bold mb-4">Crowd Checker</h2>
                     <p class="text-sm text-gray-600 mb-4">Live crowd data is a simulated prototype feature. Check out the current crowd levels at popular spots to plan your visit!</p>
-                    <ul class="space-y-4">
-                        <li class="p-4 card flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-lg">Hawa Mahal</h3>
-                                <p class="text-sm text-gray-500">The Palace of Winds</p>
-                            </div>
-                            <span class="text-sm font-bold p-2 rounded-full text-green-700 bg-green-200">Low</span>
-                        </li>
-                        <li class="p-4 card flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-lg">Amer Fort</h3>
-                                <p class="text-sm text-gray-500">Historic Fort and Palace</p>
-                            </div>
-                            <span class="text-sm font-bold p-2 rounded-full text-yellow-700 bg-yellow-200">Medium</span>
-                        </li>
-                        <li class="p-4 card flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-lg">City Palace</h3>
-                                <p class="text-sm text-gray-500">Royal Residence</p>
-                            </div>
-                            <span class="text-sm font-bold p-2 rounded-full text-red-700 bg-red-200">High</span>
-                        </li>
-                        <li class="p-4 card flex items-center justify-between">
-                            <div>
-                                <h3 class="font-semibold text-lg">Jantar Mantar</h3>
-                                <p class="text-sm text-gray-500">Astronomical Observatory</p>
-                            </div>
-                            <span class="text-sm font-bold p-2 rounded-full text-yellow-700 bg-yellow-200">Medium</span>
-                        </li>
+                    <ul id="crowd-list" class="space-y-4">
+                        <!-- Crowd data will be dynamically inserted here by JavaScript -->
                     </ul>
                     <button onclick="showSection('main-menu')" class="mt-6 w-full py-3 px-4 rounded-lg bg-gray-200 text-gray-700 font-semibold transition-colors hover:bg-gray-300">Back</button>
                 </div>
@@ -247,11 +220,107 @@ Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a ver
             '3-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
 Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
 Day 3: Authentic Dal Baati Churma lunch. End your trip with a rooftop dinner overlooking the city.`,
-            // Default plan if no specific interests are selected
             '3-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
 Day 2: Amer Fort and Jaigarh Fort.
-Day 3: A day for shopping and exploring local food markets.`
+Day 3: A day for shopping and exploring local food markets.`,
+            '4-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
+Day 3: Albert Hall Museum and Birla Mandir.
+Day 4: Day trip to Samode Palace, a magnificent heritage property.`,
+            '4-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
+Day 3: Local markets for souvenirs and handicrafts.
+Day 4: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.`,
+            '4-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
+Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
+Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.`,
+            '4-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+Day 2: Amer Fort and Jaigarh Fort.
+Day 3: A day for shopping and local food.
+Day 4: Visit Albert Hall Museum and Birla Mandir.`,
+            '5-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
+Day 3: Explore the Albert Hall Museum and Birla Mandir.
+Day 4: Day trip to Samode Palace, a magnificent heritage property.
+Day 5: Visit the historic Galta Ji (Monkey Temple) and enjoy the scenic views from the Sun Temple.`,
+            '5-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
+Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop.
+Day 4: Explore the art galleries and artisan shops in the Civil Lines area.
+Day 5: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.`,
+            '5-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
+Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
+Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.
+Day 5: Go on a food safari to different parts of the city, trying local delicacies like rabri, kulfi, and ghevar.`,
+            '5-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+Day 2: Amer Fort and Jaigarh Fort.
+Day 3: A day for shopping and exploring local food markets.
+Day 4: Visit Albert Hall Museum and Birla Mandir.
+Day 5: Explore the beautiful Sisodia Rani Garden and Vidhyadhar Garden.`,
+            '6-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
+Day 3: Explore the Albert Hall Museum and Birla Mandir.
+Day 4: Day trip to Samode Palace, a magnificent heritage property.
+Day 5: Visit the historic Galta Ji (Monkey Temple) and enjoy the scenic views from the Sun Temple.
+Day 6: Discover the intricate carvings at Patrika Gate and stroll through Jawahar Circle Garden.`,
+            '6-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
+Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop.
+Day 4: Explore the art galleries and artisan shops in the Civil Lines area.
+Day 5: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.
+Day 6: A day trip to a rural village to see local craft production.`,
+            '6-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
+Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
+Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.
+Day 5: Go on a food safari to different parts of the city, trying local delicacies like rabri, kulfi, and ghevar.
+Day 6: Take a cooking class to learn how to prepare authentic Rajasthani dishes.`,
+            '6-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+Day 2: Amer Fort and Jaigarh Fort.
+Day 3: A day for shopping and exploring local food markets.
+Day 4: Visit Albert Hall Museum and Birla Mandir.
+Day 5: Explore the beautiful Sisodia Rani Garden and Vidhyadhar Garden.
+Day 6: Discover the peaceful surroundings of Jal Mahal and the unique stepwell of Panna Meena ka Kund.`,
+            '7-heritage': `Day 1: Amer Fort, Jaigarh Fort, and Nahargarh Fort. End with a visit to Panna Meena ka Kund.
+Day 2: City Palace, Jantar Mantar, and Hawa Mahal. Enjoy a walk through the Old City.
+Day 3: Explore the Albert Hall Museum and Birla Mandir.
+Day 4: Day trip to Samode Palace, a magnificent heritage property.
+Day 5: Visit the historic Galta Ji (Monkey Temple) and enjoy the scenic views from the Sun Temple.
+Day 6: Discover the intricate carvings at Patrika Gate and stroll through Jawahar Circle Garden.
+Day 7: A day dedicated to local culture with a visit to a traditional village and a final Rajasthani thali.`,
+            '7-shopping': `Day 1: Johari Bazaar for jewellery and gemstones. Explore Bapu Bazaar for textiles and mojris.
+Day 2: Trip to Sanganer for block printing and pottery. Visit the Gaurav Tower area for modern shopping.
+Day 3: Local markets for souvenirs and handicrafts. Finish with a visit to a verified shop.
+Day 4: Explore the art galleries and artisan shops in the Civil Lines area.
+Day 5: Visit the Kishanpole Bazaar known for wooden carvings and tie-dye textiles.
+Day 6: A day trip to a rural village to see local craft production.
+Day 7: Head to Tripolia Bazaar for bangles and carpets, followed by a final shopping spree.`,
+            '7-food': `Day 1: Taste the famous pyaaz kachori and lassi at local joints. Dinner at a traditional Rajasthani restaurant.
+Day 2: Street food tour of Masala Chowk. Try a variety of sweets and chaat.
+Day 3: Authentic Dal Baati Churma lunch. End your day with a rooftop dinner overlooking the city.
+Day 4: Explore the food scene around Amer Fort, including traditional Rajasthani snacks and sweets.
+Day 5: Go on a food safari to different parts of the city, trying local delicacies like rabri, kulfi, and ghevar.
+Day 6: Take a cooking class to learn how to prepare authentic Rajasthani dishes.
+Day 7: A final grand meal at a top-rated fine-dining restaurant specializing in local cuisine.`,
+            '7-default': `Day 1: Hawa Mahal, Jantar Mantar, and City Palace.
+Day 2: Amer Fort and Jaigarh Fort.
+Day 3: A day for shopping and exploring local food markets.
+Day 4: Visit Albert Hall Museum and Birla Mandir.
+Day 5: Explore the beautiful Sisodia Rani Garden and Vidhyadhar Garden.
+Day 6: Discover the peaceful surroundings of Jal Mahal and the unique stepwell of Panna Meena ka Kund.
+Day 7: Last-minute souvenir shopping and a final taste of authentic Rajasthani cuisine.`
         };
+
+        const crowdPlaces = [
+            { name: 'Hawa Mahal', subtitle: 'The Palace of Winds' },
+            { name: 'Amer Fort', subtitle: 'Historic Fort and Palace' },
+            { name: 'City Palace', subtitle: 'Royal Residence' },
+            { name: 'Jantar Mantar', subtitle: 'Astronomical Observatory' },
+            { name: 'Albert Hall Museum', subtitle: 'State Museum of Rajasthan' },
+            { name: 'Birla Mandir', subtitle: 'Hindu Temple of Jaipur' }
+        ];
 
         function showMessageBox(message) {
             document.getElementById('message-text').innerText = message;
@@ -269,7 +338,6 @@ Day 3: A day for shopping and exploring local food markets.`
 
             // Show the requested section
             if (sectionId === 'main-menu') {
-                // Return to the main navigation menu
                 document.getElementById('app-content').classList.remove('hidden');
             } else {
                 document.getElementById(sectionId).classList.remove('hidden');
@@ -281,26 +349,52 @@ Day 3: A day for shopping and exploring local food markets.`
             const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked')).map(cb => cb.value);
             
             let planKey = `${days}-`;
-            if (interests.includes('heritage')) {
-                planKey += 'heritage';
-            } else if (interests.includes('shopping')) {
-                planKey += 'shopping';
-            } else if (interests.includes('food')) {
-                planKey += 'food';
-            } else {
+            if (interests.length === 0) {
                 planKey += 'default';
+            } else {
+                // For simplicity, we'll use the first selected interest to match a plan
+                planKey += interests[0];
             }
 
-            const planText = tripPlans[planKey] || tripPlans['3-default'];
+            const planText = tripPlans[planKey] || tripPlans[`${days}-default`] || tripPlans['3-default'];
             document.getElementById('itinerary-text').innerText = planText;
             document.getElementById('itinerary-output').classList.remove('hidden');
 
             showMessageBox("Your custom itinerary has been generated!");
         }
 
-        // Initially show the main menu
+        function updateCrowdData() {
+            const crowdList = document.getElementById('crowd-list');
+            crowdList.innerHTML = '';
+            
+            const crowdStatuses = ['Low', 'Medium', 'High'];
+            const crowdColors = {
+                'Low': { bg: 'bg-green-200', text: 'text-green-700' },
+                'Medium': { bg: 'bg-yellow-200', text: 'text-yellow-700' },
+                'High': { bg: 'bg-red-200', text: 'text-red-700' }
+            };
+
+            crowdPlaces.forEach(place => {
+                const randomStatus = crowdStatuses[Math.floor(Math.random() * crowdStatuses.length)];
+                const colors = crowdColors[randomStatus];
+
+                const li = document.createElement('li');
+                li.className = 'p-4 card flex items-center justify-between';
+                li.innerHTML = `
+                    <div>
+                        <h3 class="font-semibold text-lg">${place.name}</h3>
+                        <p class="text-sm text-gray-500">${place.subtitle}</p>
+                    </div>
+                    <span class="text-sm font-bold p-2 rounded-full ${colors.bg} ${colors.text}">${randomStatus}</span>
+                `;
+                crowdList.appendChild(li);
+            });
+        }
+        
+        // Initially show the main menu and update the crowd data
         window.onload = function() {
             showSection('main-menu');
+            updateCrowdData();
         }
     </script>
 
